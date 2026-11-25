@@ -131,6 +131,8 @@ All parameters and fields: <https://everyinfra.com/en/ebay-api/search?utm_source
 | `updated_at` | When this listing record was last updated (product_detail), ISO 8601 in UTC. |
 | `platform` | Source platform identifier, the same as platform in the request (for example xiaohongshu, tiktok). |
 
+In this test `subtitle`, `availability`, `ends_at`, `watchers`, `product_id`, `seller_url`, and `updated_at` were empty. Not every record has a value for them.
+
 All parameters and fields: <https://everyinfra.com/en/ebay-api/product_detail?utm_source=github&utm_medium=example_repo&utm_campaign=ebay-api>
 
 #### `sold` (sold listings)
@@ -192,7 +194,7 @@ Before release, we ran the 3 commands in Quick start against the live API with t
 | Command | Time (Singapore, UTC+8) | Rows | Charged |
 |---|---|---|---|
 | `python main.py search "mechanical keyboard" --out listings.csv` | 2026-11-25 13:21 | 20 | $0.001389 |
-| `python main.py item "<listing url>" --out item.json` | 2026-11-25 13:22 | 1 | $0.000958 |
+| `python main.py item "<listing url>" --out item.json` | 2026-11-25 15:32 | 1 | $0.000958 |
 | `python main.py sold "mechanical keyboard" --out sold.csv` | 2026-11-25 13:22 | 20 | $0.001389 |
 
 ## 中文
@@ -324,6 +326,8 @@ Claude 网页版和桌面版的自定义连接器、ChatGPT 只能填网址：�
 | `updated_at` | 这条报价记录的更新时间（product_detail，ISO，UTC）。 |
 | `platform` | 数据来源平台标识，与请求里的 platform 一致（如 xiaohongshu、tiktok）。 |
 
+这次实测里 `subtitle`、`availability`、`ends_at`、`watchers`、`product_id`、`seller_url`、`updated_at` 是空的，不是每条记录都有。
+
 完整参数和字段：<https://everyinfra.com/ebay-api/product_detail?utm_source=github&utm_medium=example_repo&utm_campaign=ebay-api>
 
 #### `sold`（已售商品）
@@ -377,7 +381,7 @@ eBay 有 5 个能力：关键词搜索、店铺、评价、已售商品、商品
 | 命令 | 时间（新加坡时间） | 返回条数 | 扣费 |
 |---|---|---|---|
 | `python main.py search "mechanical keyboard" --out listings.csv` | 2026-11-25 13:21 | 20 | $0.001389 |
-| `python main.py item "<商品链接>" --out item.json` | 2026-11-25 13:22 | 1 | $0.000958 |
+| `python main.py item "<商品链接>" --out item.json` | 2026-11-25 15:32 | 1 | $0.000958 |
 | `python main.py sold "mechanical keyboard" --out sold.csv` | 2026-11-25 13:22 | 20 | $0.001389 |
 
 `product_detail` 返回的一条（正文截到 60 字，作者字段没放进来）：
